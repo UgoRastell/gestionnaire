@@ -48,32 +48,4 @@ npm run build
 npm run preview
 ```
 
-## Fonctionnalités implémentées
 
-### Fonctionnalités principales
-- ✅ Ajout de tâches avec description et catégorie
-- ✅ Modification de tâches existantes
-- ✅ Suppression de tâches
-- ✅ Organisation par catégories (Travail, Personnel, Urgent)
-- ✅ Interface responsive (mobile, tablette, desktop)
-
-### Bonus implémentés
-- ✅ Ajout d'une date limite pour chaque tâche
-- ✅ Tri des tâches par date limite
-- ✅ Message clair si aucune tâche n'est présente
-- ✅ Système de filtrage par catégorie
-- ✅ Persistance des données via localStorage
-- ✅ Marquage des tâches comme terminées
-
-## Détails techniques
-
-### Structure du projet
-- `src/components/TaskForm.jsx`: Formulaire d'ajout/modification de tâches
-- `src/components/TaskList.jsx`: Affichage et gestion des tâches
-- `src/App.jsx`: Composant principal avec gestion d'état
-
-### Technologies utilisées
-- React (hooks pour la gestion d'état)
-- Vite (outil de bundling)
-- Lightning CSS (styles avec nesting et autoprefixing)
-- LocalStorage (persistance des données)
