@@ -24,7 +24,7 @@ L'ensemble du style est géré à l'aide de Lightning CSS, en tirant parti de se
 
 1. Cloner le dépôt
 ```bash
-git clone [URL_DU_DEPOT]
+git clone https://github.com/UgoRastell/gestionnaire.git
 cd task-manager
 ```
 
