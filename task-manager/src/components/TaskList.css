@@ -1,0 +1,199 @@
+.task-list-container {
+  width: 100%;
+
+  & .task-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    
+    & .filter-group, & .sort-group {
+      display: flex;
+      align-items: center;
+      
+      & label {
+        margin-right: 0.5rem;
+        font-weight: 500;
+        color: #555;
+      }
+      
+      & select {
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        
+        &:focus {
+          outline: none;
+          border-color: #646cff;
+        }
+      }
+    }
+  }
+
+  & .no-tasks {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+    
+    & p {
+      color: #888;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+  }
+
+  & .task-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    
+    & .task-card {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      
+      &:hover {
+        transform: translateY(-2px);
+      }
+      
+      &.travail {
+        border-top: 4px solid #4285f4;
+      }
+      
+      &.personnel {
+        border-top: 4px solid #34a853;
+      }
+      
+      &.urgent {
+        border-top: 4px solid #ea4335;
+      }
+      
+      &.completed {
+        opacity: 0.7;
+      }
+      
+      & .task-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        background-color: rgba(0, 0, 0, 0.03);
+        
+        & .task-category {
+          font-weight: bold;
+          font-size: 0.85rem;
+          
+          .travail & {
+            color: #4285f4;
+          }
+          
+          .personnel & {
+            color: #34a853;
+          }
+          
+          .urgent & {
+            color: #ea4335;
+          }
+        }
+        
+        & .task-due-date {
+          font-size: 0.85rem;
+          color: #666;
+        }
+      }
+      
+      & .task-content {
+        padding: 1rem;
+        
+        & .task-description {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 1rem;
+          
+          & input[type="checkbox"] {
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+          }
+          
+          & p {
+            margin: 0;
+            line-height: 1.5;
+            
+            &.completed-text {
+              text-decoration: line-through;
+              color: #888;
+            }
+          }
+        }
+        
+        & .task-actions {
+          display: flex;
+          justify-content: flex-end;
+          gap: 0.75rem;
+          
+          & button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            
+            &.btn-edit {
+              background-color: #f1f1f1;
+              color: #333;
+              
+              &:hover {
+                background-color: #e1e1e1;
+              }
+              
+              &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+              }
+            }
+            
+            &.btn-delete {
+              background-color: #fff0f0;
+              color: #d32f2f;
+              
+              &:hover {
+                background-color: #ffe6e6;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+  .task-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .task-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .task-controls {
+    flex-direction: column;
+    gap: 1rem;
+    
+    & .filter-group, & .sort-group {
+      width: 100%;
+      
+      & select {
+        flex: 1;
+      }
+    }
+  }
+}
